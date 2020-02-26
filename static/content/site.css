@@ -1,0 +1,239 @@
+body {
+    font-size: .875rem;
+    width: 100%;
+    padding-top: 30px;
+}
+
+/*dont do it*/
+/*html, body {
+    height: 100%;
+}*/
+
+.feather {
+    width: 16px;
+    height: 16px;
+    vertical-align: text-bottom;
+}
+
+/*
+ * Sidebar
+ */
+.navbar-toggler {
+    padding: 0px;
+}
+.sidebar {
+    width: 180px;
+}
+
+@media (min-width: 768px) {
+    .main {
+        padding-right: 20px;
+        padding-left: 200px;
+    }
+
+    .sidebar {
+        display: block !important;
+        position: fixed !important;
+        top: 32px !important;
+        z-index: 101;
+        height: calc(100vh - 32px);
+        overflow-x: hidden;
+        overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    }
+
+    .fixed-bottom {
+        margin-left: 180px;
+        margin-right: 20px;
+    }
+}
+
+.sidebar-fixed {
+    display: block !important;
+    position: fixed !important;
+    top: 32px !important;
+    z-index: 1050;
+    height: calc(100vh - 32px);
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+.sidebar .nav-link {
+    font-weight: 500;
+    color: #333;
+}
+
+.sidebar .nav-link .feather {
+    margin-right: 4px;
+    color: #999;
+}
+
+.sidebar .nav-link.active {
+    color: #007bff;
+}
+
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.active .feather {
+    color: inherit;
+}
+
+.sidebar-heading {
+    font-size: .75rem;
+    text-transform: uppercase;
+}
+
+.sticky-top-2 {
+    position: sticky;
+    top: 34px;
+    z-index: 100;
+}
+
+.sidebar-sticky-2 {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 34px; /* Height of navbar */
+    height: calc(100vh - 34px);
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+.ul-items {
+    list-style: none;
+    padding: 0px;
+}
+
+    .ul-items .nav-link {
+        padding: 0px;
+        color: #212529;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        x-border-top: 1px solid #dee2e6;
+    }
+
+    .ul-items .nav-link:hover,
+    .ul-items .nav-link.active {
+        background-color: #f7f7f9;
+    }
+        
+        /*
+ * Navbar
+ */
+.navbar-brand {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    font-size: 1rem;
+    box-shadow: none;
+}
+
+.navbar .form-control {
+    padding: .75rem 1rem;
+    border-width: 0;
+    border-radius: 0;
+}
+
+.form-control-dark {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, .1);
+}
+
+.form-control-dark:focus {
+    border-color: transparent;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+}
+
+.form-control-console {
+    overflow: hidden;
+    font-family: 'Inconsolata', 'Lucida Console';
+    font-size: 15px;
+}
+
+input, textarea {
+    outline: none;
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+}
+
+.table-console tbody td,
+.table-console tbody td pre {
+    font-family: 'Inconsolata', 'Lucida Console';
+    font-size: 14px;
+}
+
+.w-max-100 {
+    max-width: 100px;
+    overflow: hidden;
+}
+
+.w-100-precent {
+    width: 100%;
+}
+
+.h-50 {
+    height: 50px !important;
+    overflow: hidden;
+}
+
+.h-40 {
+    height: 40px !important;
+    overflow: hidden;
+}
+
+.h-100-precent {
+    min-height: 100%;
+    height: auto !important; /* cross-browser */
+    height: 100%; /* cross-browser */
+}
+
+.fixed-row-bottom {
+    position: fixed;
+    bottom: 0;
+}
+
+.font-black {
+    color: black !important;
+}
+
+.text-error {
+    color: #dc3545;
+}
+
+.loader {
+    border: 2px solid #f3f3f3; /* Light grey */
+    border-top: 2px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    animation: spin 2s linear infinite;
+    display: inline-block;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.table th {
+    font-size: 12px;
+}
+
+tr.border-top-0 td{
+    border-top: 0px none
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.text-break-word {
+    word-wrap: break-word;
+}
+
+.bg-grayish {
+    background: rgba(0,0,0,.05)
+}
