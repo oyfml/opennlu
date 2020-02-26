@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<br/>
+<form action="{{url_for('save_config')}}" method = "POST" name = "SaveForm" enctype = "multipart/form-data">
+  <label for="title" class="col-sm-2 control-label">Filename</label>
+  <div class="col-sm-10">
+    <input class="form-control" name="title" type="text" value={{filename}}>
+  </div>
+  <br><br>
+
+  <label for="config_content" class="col-sm-2 control-label">Content</label>
+  <div class="col-sm-10">
+    <textarea class="form-control" name="content" style="height: 550px;">{{filecontent}}</textarea>
+  </div>
+  <br>
+  
+    <input class = "btn btn-primary" type = "submit" value = "Save" name = "save" style="margin-left: 15px"/>
+  <a class="btn btn-default" href="/config">Cancel</a>
+</form>
+
+{% endblock %}

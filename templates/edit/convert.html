@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<br/>
+<form class="form-check" action="{{url_for('convert')}}" method = "POST" name = "ConvertForm" enctype = "multipart/form-data">
+  <div class="row">
+    <div class="col-sm-5">
+      <label for="title" class="col-sm-5 control-label">Existing Filename</label>
+    </div> 
+    <div class="col-sm-5">
+      <label for="type" class="col-sm-5 control-label">New Filename</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-5">
+      <input class="form-control " name="old_title" type="text" value="{{filename}}" disabled>
+    </div>
+    <div class="align-self-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="#007bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+    </div>
+    <div class="col-sm-5">
+        <input class="form-control " name="new_title" id="new_title" type="text" value="{{newfilename}}">
+    </div>
+  </div>
+  <br><br>
+  <div class="row">
+    <div class="col-sm-5">
+      <label for="content" class="col-sm-2 control-label">Content</label>
+    </div>
+    <div class="col-sm-5">
+        <label for="newcontent" class="col-sm-2 control-label">Content</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-5">
+        <textarea class="form-control" name="content" style="height: 550px;" disabled>{{oldcontent}}</textarea>
+    </div>
+    <div class="align-self-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="#007bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+    </div>
+    <div class="col-sm-5">
+        <textarea class="form-control" name="newcontent" style="height: 550px;">{{newcontent}}</textarea>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <input class = "btn btn-primary" type = "submit" value = "Convert" name = "confirm" style="margin-left: 15px"/>
+    <a class="btn btn-default" href="/edit">Cancel</a>
+  </div>
+</form>
+
+{% endblock %}
+
+{% block script %}
+{% endblock %}

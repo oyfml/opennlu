@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<br>
+<h4>RASA Pipeline</h4>
+<div>
+    Create and Manage RASA 
+    <a href="https://rasa.com/docs/rasa/nlu/components/#components">component</a>
+    pipeline configuration in yml or md format.
+</div>
+<hr/>
+<br>
+<div class="container-fluid">
+    <div class="col">
+        <div class="card " >
+            <h6 class="card-header bg-secondary text-white" >Create <span class="badge badge-primary" style="font-size: 16px">New</span></h6>
+            <div class="card-body">
+                <form method = "POST" name = "Form" enctype = "multipart/form-data" onsubmit="return checkForm()">
+                    <input  type = "text" name = "new_name" placeholder =" Enter filename" style="margin-right: 15px"/>
+                    <input class = "btn-sm btn-primary" type = "submit" value = "Create" name = "create"/>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div class="col">
+        <div class="card">
+            <h6 class="card-header bg-secondary text-white" >Update <span class="badge badge-dark" style="font-size: 16px">Existing</span></h6>
+            <div class="card-body">
+                    <form method = "POST" name = "FileForm" enctype = "multipart/form-data" onsubmit="return checkFile(this.form)">
+                        <input type = "file" name = "file" placeholder = "Please choose a file"  style="margin-right: 15px"/>
+                        <input class = "btn-sm btn-secondary" type = "submit" value = "Open" name = "open"/>
+                    </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block scripts %}
+
+<script type="text/javascript">
+    //Checks for empty fields in text box
+    function checkForm() {
+        var a = document.forms["Form"]["new_name"].value;
+        if (a == null || a == "") {
+            alert("Please fill in filename");
+            return false;
+        }
+    }
+    //Checks for existing file with correct file type
+    function checkFile(FileForm){
+        var fileVal = document.forms["FileForm"]["file"].value;
+        //RegEx for valid file name and extensions.
+        var pathExpression = "[?:[a-zA-Z0-9-_\.]+(?:.yml|.md|.json)";
+        //Checks for wrong file type
+        if(fileVal != ""){
+            if(!fileVal.toString().match(pathExpression)){
+                alert("Invalid file type. Please select .yml / .md / .json file type.");
+                return false;
+            }else{
+                return true;
+            }
+        //Checks if file not chosen
+        } else {
+            alert("No file has been chosen. Please select a file.");
+            return false;
+        }
+    }
+</script>
+{% endblock %}

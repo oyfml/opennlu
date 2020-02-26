@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="jumbotron">
+  <h1 style="color: rgb(96, 100, 100);">OpenNLU</h1 s>
+  <br>
+  <h6>OpenNLU is a front-end interface for Natural Language Understanding (NLU) development, powered by RASA, Tensorflow and PyTorch.</h6>
+  <p> 
+    <br>
+    NLU is a subdomain of Natural Language Processing (NLP), which performs the task of Named Entity Recognition and Intent Classification.
+    <br>
+    The goal is to understand the user's utterance, which is to interpret the intent of the request and extract key information.
+    <br>
+    In dialogue systems, the NLU component produces a structural representation of the user request, so that subsequent dialogue components can process and perform their NLP tasks.
+  </p>
+</div>
+
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="static/img/rasa.png" alt="RASA" width="100%" height="400">
+      <div class="carousel-caption">
+        <h3 style="color:black"> Build contextual chatbots and AI assistants with RASA </h3>
+        <p> Rasa is an open source machine learning framework for automated text and
+            voice-based conversations. Understand messages, hold conversations, and 
+            connect to messaging channels and APIs. 
+        </p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="static/img/tf.png" alt="Tensorflow" width="100%" height="400">
+      <div class="carousel-caption">
+        <h3 style="color:black"> Tensorflow </h3>
+        <p>  
+        </p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="static/img/pt.png" alt="PyTorch" width="100%" height="400">
+      <div class="carousel-caption">
+          <h3 style="color:black"> PyTorch </h3>
+          <p>  
+          </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+
+</div>
+<br><br>
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<br>
+<div>
+    <h4>Load Model</h4>
+    Select existing trained NLU model to load into interface. Model must be in <u class="text-primary">opennlu/data/model</u> folder to appear here.
+</div>
+<hr>
+<div class="container-fluid">
+    <div class="row">
+        <h6><span class="badge badge-secondary">Select</span> Model</h6><br><br>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <ul class="list-group centred">
+                <a class="list-group-item  " style="background-color: #82009c; text-align: center; color: white;"><b>RASA</b></a>
+                {% if not_loaded_list|length > 0 %}
+                {% for model in not_loaded_list %}
+                    <!--loop.index0 is index of jinja for loop-->
+                    <a id="{{loop.index0}}" onclick="showLoading({{loop.index0}})" href="/load/adding?model={{model}}" class="list-group-item" style="text-align: center;">{{model}} &nbsp&nbsp<div id="load_{{loop.index0}}" class="loader" style="display: none;"></div></a>
+                {% endfor %}
+                {% else %}
+                    <a class="list-group-item" style="color: red; font-size: 12px; text-align: center;">No available trained models to load</a>
+                {% endif %}
+            </ul>
+        </div>
+        <div class="col-4">
+            <ul class="list-group centred">
+                <a class="list-group-item  " style="background-color: #07af92; text-align: center; color: #ffa500;"><b>TensorFlow</b></a>
+  
+            </ul>
+        </div>
+        <div class="col-4">
+            <ul class="list-group centred">
+                <a class="list-group-item  " style="background-color: #f0f0f0; text-align: center; color: #ff4800;"><b>PyTorch</b></a>
+            </ul>
+        </div>
+    
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+
+    function showLoading(index){
+        document.getElementById('load_'+index).style.display = "";
+        document.getElementById(index).className = "list-group-item active"
+        return true;
+    }
+
+</script>
+{% endblock %}
