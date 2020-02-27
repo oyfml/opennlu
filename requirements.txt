@@ -1,2 +1,1 @@
-rasa==1.5.0
-tensorflow-text==1.15.0
+rasa==1.6.0
