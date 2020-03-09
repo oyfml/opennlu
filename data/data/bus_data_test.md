@@ -1,0 +1,482 @@
+## intent:bus-arrival-time(@bus-stop)
+- How many minutes more for [192](bus-num) to arrive
+- When is the next bus number [905](bus-num) at [Liang Huat Ind Cplx](bus-stop) coming
+- Arriving time of [162](bus-num)
+- I would like to know the time that bus [162](bus-num) will reach my station
+- What time will the next bus reach this stop
+- What is [92](bus-num) arrival time
+- How many minutes for [92](bus-num) to arrive
+- When will the bus come
+- How long for [139](bus-num) to reach here
+- [167](bus-num) arriving time please
+- When will next bus arrive
+- Bus [32](bus-num) arrival time to [Tampines Stn/Int](bus-stop)n
+- When is the ETA of bus [62](bus-num)?
+- What time will next bus arrive
+- When will my bus arrive
+- What is the arrival time of [905](bus-num)
+- When will [154](bus-num) be coming
+- [88](bus-num) coming?
+- Could you tell me what time [155](bus-num) is coming
+- Tell me what time the [103](bus-num) bus is coming please
+- What time the bus arrive here
+- [380](bus-num) how long
+- Still got how long to wait for bus [903](bus-num) to reach?
+- What is the estimated time of arrival for bus [96](bus-num)?
+- When to board [188](bus-num)
+- May I know the arrival time of bus [109](bus-num) reach at [Damai Stn Exit B](bus-stop)
+- Could be tell me the timing of arrival for bus [123](bus-num)
+- When will the next bus come
+- What time is [905](bus-num) bus coming
+- When is the next bus coming to [Opp Khatib Stn ](bus-stop)
+- When will [88](bus-num) arrive here
+- Is the [124](bus-num) bus reaching soon?
+- How much longer for [129](bus-num) to reach here
+- What time will the next bus come
+- How many minutes more for [129](bus-num) to reach here
+- What time is [851](bus-num) arriving
+- How many minutes more for [169](bus-num) to reach here
+- When is bus [76](bus-num) arriving
+- Time for bus to come here
+- When do I board [166](bus-num)
+- When is the next bus arriving [Mt Alvernia Hosp](bus-stop)
+- Time for bus [67](bus-num) to arrive
+- What is the arrival time of bus [69](bus-num) at my location
+- How much longer to reach
+
+## intent:onboard-travel-duration
+- When will you arrive at [Opp Caldecott Stn](bus-stop)
+- About how many minutes to go
+- When will arrive at [Henderson Way](bus-stop)
+- When arrive [Opp Tai Seng Stn](bus-stop)
+- Arrive time in [Opp Ngee Ann City](bus-stop)
+- In how many minutes time would you be arriving
+- How many stops more?
+- May I know how many stops I can reach my destination
+- What is my estimated time of arrival
+- Estimated time arrival?
+- How many minutes for bus to arrive at [Liang Huat Ind Cplx](bus-stop)
+- When will [96](bus-num) arrive at [Khoo Teck Puat Hosp](bus-stop)
+- When will the bus will reach [Serangoon Sports Cplx](bus-stop)
+- When do I need to stop for [Sembawang Int](bus-stop)
+- When is the arrival of [Opp Sembawang Stn](bus-stop)
+- Still got how long more to arrive at [NTU](bus-stop)
+- Reaching soon?
+- When to arrive in [Opp Paya Lebar Girls' Sch](bus-stop)
+- How long need to wait for next [Opp Raffles Girls' Sch](bus-stop)
+- How long does bus [Mt Alvernia Hosp](bus-stop) arrive to [Suntec City](bus-stop)
+- what is my eta
+- What time will bus arrive in [Opp Temasek Sec Sch](bus-stop)
+- Time to [Opp NUS Fac Of Architect](bus-stop)
+- In how long can reach [S'Goon Stn Exit C/Blk 201](bus-stop)
+- When we arrive in [Buangkok Stn Exit B](bus-stop)
+- Reaching [Meridian JC](bus-stop)?
+- Arrival time of bus [Opp Yishun Pr Sch](bus-stop)
+- How many more stops until [Pasir Panjang Stn/Fc](bus-stop)?
+- Hey when you arrive [Kent Ridge Stn Exit A/NUH](bus-stop)
+- Take how many stops to [Temasek Poly West G](bus-stop)
+- When to alight at [Kaki Bukit](bus-stop)
+- What the arrival time of [Toa Payoh Stn](bus-stop)
+- ETA for [Damai Stn Exit B](bus-stop)
+- How long will I take to reach [Opp Punggol View Pr Sch](bus-stop)
+- Are we reaching soon?
+- What the arrival time for [Bugis Stn Exit D](bus-stop)
+- Bus arrival time to [Tampines Stn/Int](bus-stop)
+- How long does it take to [Harbourfront Stn Exit B](bus-stop)
+- How long till I arrive at [Opp Tanglin Trust Sch](bus-stop)
+- [151](bus-num) reach [Kuo Chuan Presby Sch](bus-stop)?
+- When will bus be in [Opp Bt View Sec Sch](bus-stop)
+- What time will the bus reach [Evergreen Pr Sch](bus-stop)
+- What time will autonomous bus arrive in [Yishun JC](bus-stop)?
+- When will we arrive in [Opp Mountbatten Stn](bus-stop)
+- In what time will bus will arrive in [Nibong Stn Exit B](bus-stop)
+- Arrival time [UE Sq](bus-stop)?
+- When will arrive in [Ang Mo Kio Pr Sch](bus-stop)
+
+## intent:transfer-inquiry
+- At which bus stop I need to stop to change to bus number [88](bus-num)
+- Does this bus transfer me to nearest MRT
+- I want to transfer to take another bus to go to [Hougang Ave 1](bus-stop), which stop should I alight
+- Where can transfer
+- I want to transfer to [139](bus-num), which stop do I alight at
+- Where to alight to transfer to bus [108](bus-num)
+- Which stop will allow me to transfer to take [31](bus-num)
+- Can I alight at [Bt View Sec Sch](bus-stop) to change to [Mayflower Sec Sch](bus-stop)
+- How can I transfer
+- Where should I alight to transfer bus [183](bus-num)?
+- Where should I alight to transfer to bus [33](bus-num)
+- Which stop transfer bus [88](bus-num)
+- Where to transfer to bus [Buona Vista Stn Exit D](bus-stop)
+- Where can I alight to get bus to [Opp Labrador Park Stn](bus-stop)?
+- I want to take another bus, from which bus stop should I alight so I can take bus [93](bus-num)
+- Which bus stop to alight to transfer to [166](bus-num)
+- How can I transfer bus
+- Which bus stop has [97](bus-num)?
+- This bus should alight where to transfer by bus to reach [Bishan Stadium](bus-stop)
+- Which stop to alight to transfer to bus [54](bus-num) to reach [Sembawang Int](bus-stop)
+- Which bus stop has bus [132](bus-num)?
+- Can I alight at [Bugis Junction](bus-stop) to take bus [139](bus-num)
+- Where should I alight to transfer to another bus to reach [Yishun Ave 3](bus-stop)
+- How may I transfer bus to nearest MRT
+- Where can I alight to get to bus [13](bus-num)?
+- I want to transfer by bus
+- I want to transfer bus to [Aft Stevens Stn](bus-stop), which stop should I take
+- How can I transfer to reach [Marina Bay](bus-stop)
+- I want to transfer by bus to nearest bus interchange
+- Where can I alight to transfer to bus [183](bus-num)?
+- Where do I transfer over to get bus to [Waterway Park](bus-stop)?
+- How to transfer to [Opp Ang Mo Kio Stn](bus-stop)
+- Where can I transfer to [Poi Ching Pr Sch](bus-stop)
+- Can transfer stop to [Seng Kang Stn](bus-stop)
+- I want to transfer by another bus, which stop should I alight
+- At which bus stop would I get bus [185](bus-num)
+- Which bus stop will allow me to transfer to take [85](bus-num)
+- Want to change to bus [186](bus-num), which stop to transfer
+- Does this bus transfer
+- Where is this bus going to alight so that I can transfer to bus [915](bus-num)
+- I want to transfer by bus [66](bus-num), which stop should I alight
+- At which bus stop would I get bus to [Toa Payoh Polyclinic](bus-stop)
+- Want to transfer to [Yishun Stn](bus-stop)
+- Which bus stop will allow me to transfer to bus [79](bus-num)
+- Where should I alight to get bus [131](bus-num)?
+- Which bus stop should I alight to transfer me to [411](bus-num)
+- Does this bus transfer me to nearest interchange
+- Where can I transfer to get bus [90](bus-num)?
+- I want to transfer bus to [96](bus-num), which stop should I alight
+- Where to change to bus [King Albert Pk Stn](bus-stop)
+- At which bus stop I need to stop to change to bus number [Serangoon Sports Cplx](bus-stop)
+- Where should I stop to get bus to [Anglo-Chinese Sch](bus-stop)?
+- I want to transfer by bus, which stop has [105](bus-num)
+- I want to transfer to take another bus, which bus stop has [159](bus-num)
+- Where do I alight to get bus to [Innova JC](bus-stop)?
+- I want to go to [Jurong East Stn](bus-stop), which bus stop should I alight so that I transfer bus there
+- How may I transfer bus to MRT
+- I want to take another bus to [Tampines Ave 2](bus-stop), from which bus stop should I alight so I can take bus [93](bus-num)
+- Change bus to [Labrador Park Stn](bus-stop)
+- Where do I alight to get bus [165](bus-num)?
+- Where can I stop to transfer bus to [Marymount Stn](bus-stop)?
+- I want to change bus to [Dover Stn](bus-stop), what bus should I take
+
+## intent:alert
+- Alert 3 minutes before arriving [St. Anthony's Pr Sch](bus-stop)
+- Can you send me a notification before we reach [Admiralty Stn](bus-stop)
+- Inform [Lim Chu Kang St 61](bus-stop)
+- Please inform me before [Ang Mo Kio Int](bus-stop)
+- Please signal me when [Macpherson Rd](bus-stop)
+- Please warn me when I need to get off
+- Please alert me when is [Sim Lim Sq](bus-stop)
+- Please tell me when to alight?
+- Alert me when it is [Hougang St 22](bus-stop)
+- Alert me when reach [Hougang Ave 3](bus-stop)
+- Please tell me when should I alight?
+- Can give me advance notice when reaching [Serangoon Stn](bus-stop)?
+- Alert me when it's my stop
+- Can you please tell me when my stop comes and I am supposed to get down?
+- Tell me when reaching [Ang Mo Kio Ave 5](bus-stop)
+- Please warn me when reaching [Kranji Rd](bus-stop)
+- Please alert me how many more stops to alight
+- Inform me [Choa Chu Kang St 31](bus-stop)
+- Please notify me when [Bedok North Rd](bus-stop)
+- Please alert me when reaching bus stop to alight
+- Please tell me when do i alight?
+- Tell me where do I get off
+- Send me notification before [St Michaels Int](bus-stop)
+- Please remind me when reaching [Sims Place](bus-stop)
+- Send me notification before [Harbourfront Stn](bus-stop) please
+- Please alert me when reaching alighting bus stop
+- Remind me when to get off the bus at [Jalan Datoh Rd](bus-stop)
+- Inform me when to alight
+- Please tell me when to get off?
+- Do you mind letting me know when reaching [Clementi Stn](bus-stop)?
+- Send me notice before [Bedok St 11](bus-stop)
+- Tell me when to alight one stop in advance
+- Remind me to get off near destination
+- Send me when [Mandai Rd](bus-stop)
+- Alert me when reaching [Yio Chu Kang Rd](bus-stop)
+
+## intent:general-navigation
+- How to go to [Cecil St](destination)
+- Where can take bus to [Neo Tiew Rd](destination)
+- Nearest bus stop have bus to [Rochor Stn](destination)
+- Where to take bus [68](bus-num)
+- Where to board [176](bus-num)
+- Which stop is the closest to [Delta Rd](destination)?
+- Where is bus stop that is nearby [Macpherson Rd](destination)
+- Which bus stop will help me get to [Pei Hwa Sec Sch](destination)
+- How to reach [NTU](destination)
+- Where should I get off if I want to go to [Serangoon Gardens](destination)
+- How to get to nearest MRT
+- What bus services could go to [Opp Waterway Pr Sch](destination)
+- How to get to nearest bus stop
+- Nearest bus to [Choa Chu Kang St 24](destination)
+- Which stop will help me get to [Opp Ang Mo Kio Pr Sch](destination)
+- where to take [174](bus-num)?
+- Which bus stop to stop for [Chai Chee Rd](destination)
+- Which station is the closest to [Crawford St](destination)?
+- Where to board bus [913](bus-num)
+- Which stop can get me to [Hougang Pr Sch](destination)
+- What is the bus that can go to [Tampines Ave 1](destination)
+- Which bus stop will help me get to [Pei Hwa Pr Sch](destination)
+- Which bus stop can get me to [Anderson JC](destination)
+- Which stop will get to [Opp Ang Mo Kio Sec Sch](destination)
+- Where should I stop if I want to go [Pioneer Rd](destination)
+- What bus can go to [Ubi Rd](destination)
+- How can I reach [River Valley High Sch](destination)?
+- Which bus stop would be the closest to [Lavender Stn](destination)?
+- Which bus can go [Mayflower Sec Sch](destination)
+- Which bus stop would be the closest to [Lorong Chuan Stn](destination)?
+- Where do I stop if I want to go to [Upp Changi Rd](destination)
+- Which bus stops will help me get to [Pei Hwa Pr Sch](destination)
+- Which are the buses that can take me from [Dover Stn](start-location) to [Clementi Stn](destination)
+- Where got bus [185](bus-num)
+- Which bus takes me to [Mandai lake Rd](destination)
+- Where can find [St. Anthony's Cano Sch](destination) nearby
+- Where to find transport to [Marsiling St 14](destination)
+- Where can I get off for [Macpherson Way](destination)
+- What stop will let me get to [Geylang Bahru](destination)
+- What bus services can go [Punggol Stn](destination)
+- Which are the buses that can take me to [Dover Stn](destination)
+- Which bus number can go [Anson Rd](destination)
+- Which bus can I take to [Robinson Rd](destination)
+- Which station will get me to [Yio Chu Kang Rd](destination)
+- Nearest bus [Opp University Health Ctr](destination)
+- Where can find bus [139](bus-num)
+- What bus can travel to [Pasir Ris Ave 2](destination)
+- Where nearby can find bus [42](bus-num)
+- What is the bus number that can go to [Loyang Ave 3](destination)
+- Which station will let me get to [Alexandra Hosp](destination)
+- Which is the right bus to take to [Nanyang Poly](destination)
+- Which station will get to [Alexandra Hosp](destination)
+- How to get from [Whampoa West Dr](start-location) to [Woodleigh Stn](destination)
+- Which number can go [Opp Naval Base Pr Sch](destination)
+
+## intent:end-route-inquiry
+- end destination
+- What is the last stop
+- What bus stop is the last one
+- Does this service end at [Clarke Quay Stn](bus-stop)
+- Where does the [99](bus-num) bus service end
+- Where does the [165](bus-num) bus route terminate
+- I would like to know where the bus route terminates
+- Where does this bus service end
+- What is last bus stop
+- Where will the bus service end
+- Where will this bus end
+- What is the end destination
+- Where does this [135](bus-num) bus end
+- Where is the last stop for [88](bus-num)
+- [188](bus-num) final destination
+- Tell me what is the last stop
+- What is the end stop of bus route
+- Where is the last bus stop
+- Where is the last bus stop of the bus journey
+- Where is the last stop of the bus journey
+- What is the last station
+- Where is the end destination
+- Can tell me which bus stop is the last stop please
+- name of last bus stop please
+- Where is the last bus stop of the bus service
+- What's the end stop
+- Where does the [99](bus-num) bus route end
+- Which bus stop is the last one
+- Where will this bus go
+- Which direction is this bus going
+
+## intent:bus-fare-inquiry
+- How much is the price for a bus trip
+- Whats the fare
+- How much is bus ticket to go to [Sin Ming Drive](destination)
+- I want to go to [Orchard Rd](destination) how much is it
+- How much for adult ticket
+- How much to pay to go to [Woodlands Ctr Rd](destination)
+- How much is bus fare [Joo Koon Stn](start-location) to [Pioneer Stn](destination)
+- What is the ticket amount for [Opp Fairfield Meth Pr Sch](start-location) to [Opp Kembangan Stn](destination)
+- How much from [Commonwealth Ave West](start-location) to [Yishun Ave 2](destination)
+- How much is the trip from [Jurong West](start-location) to [Yishun Ave 5](destination)
+- What is the total fare of this trip
+- What is the cost of bus fare from [Upp Serangoon Rd](start-location) to [Payar Lebar Rd](destination)
+- How much does student ticket cost
+- What is the cost of payment from [Opp Ang Mo Kio Comm Hosp](start-location) to [Opp Telok Blangah Stn](destination)
+- How much does it cost to go from [Eunos Link](start-location) to [Jalan Eunos](destination)
+- How much is trip
+- How much does child ticket cost
+- How much to [Bugis Junction](destination)
+- What is fare cost to go from [Joo Chiat Rd](start-location) to [Telong Ayer Rd](destination)
+- How much should I pay for the bus ticket
+- How much is bus fare to [River Valley Rd](destination)
+- What price to [Hougang Sec Sch](destination)
+- What is children price
+- How much does it cost to go from [Bukit Panjang Rd](start-location) to [Payar Lebar Rd](destination)
+- What is cost of elderly price ticket to [Tampines Ave 7](destination)
+- How much is it
+- How much is the bus ticket when I want to go to [Paya Lebar Stn](destination)
+- What is student price to go from [Opp Kembangan Stn](start-location) to [Opp Fairfield Meth Pr Sch](destination)
+- How much does bus ticket cost
+- How much for the bus journey
+- What's the bus fare
+- How much is the price for a trip from [Marine Parade Rd](start-location) to [Sims Ave](destination)
+- How much is cost of student ticket
+- What is the cost of bus ticket
+- How much is cost of ticket
+
+## intent:bus-route-inquiry
+- What are the routes this bus is going by
+- Where is this bus travelling to
+- What's the next bus station
+- Can you tell me the upcoming stops
+- Next bus stop name
+- Where will this bus stop
+- Please check what is next stop
+- What's the stops next
+- Name of next stop?
+- What route is this bus travelling by
+- Tell me this bus's route
+- Next stop?
+- What are the routes this bus is taking
+- Where will the bus be going to
+- What is the route this bus is taking
+- What is the route this bus is going by
+- Where bus goes
+- Can you check for me what is the next stop
+- Which are the location of the bus stops
+- Where will this bus stop at
+- Which bus stops will this bus go to
+- Can you tell me name of upcoming stops
+- Tell me the route of this bus
+- I would like to know what are the upcoming stops
+- Where does this bus go through
+- I would like to know what is the next bus stop
+- Where is this bus going to
+- What is the next location
+- Where this bus go to
+- I would like to know the name of subsequent bus stops
+- What is location of next bus stop
+- Name of next bus stop?
+- What are the locations of the bus routes
+- Where is bus going
+- Can you tell me this bus route
+- Next stop name
+- Next stop is what
+- What's next stop
+- What are the bus stops for this bus
+- Tell me all the stops for this bus
+- I would like to know name of subsequent stops
+- What are the upcoming stops from this station
+- What is the next bus station
+- Can you tell me the route of this bus?
+- Which stops will this bus go to
+
+## intent:current-location
+- Where is this?
+- What is this bus stop
+- Where is the bus
+- What station is this bus at
+- Can you tell me what place this is?
+- Where are we now
+- Please tell me what station we are at now
+- What is current bus stop name
+- Please inform me of our location
+- Please tell me which location is this
+- What bus stop is the bus at
+- May I know where are we right now
+- Which bus stop is this
+- Where is this place
+- Please tell me what bus stop we are at now
+- What is this current bus stop name
+- Tell me the bus stop we at now
+- What is this current bus stop's name
+- What stop is the bus at
+- Where is the bus number [96](bus-num) currently at
+- What is bus stop's name
+- Which stop is this
+- Which bus stop is this bus at now
+- What's this bus at?
+- Where is the bus near now
+- What is current stop this bus is at now
+- What is bus's current location
+- What is this bus location
+- Please tell me where are we now
+- May I know our current location
+- Please tell me what stop we are at now
+- What is this current location
+- What's this stop
+- May I know our location
+
+## intent:bus-reachability-inquiry
+- Do you go to [King Albert Pk Stn](bus-stop)
+- Is there a chance that the bus will be passing by [Sultan Plaza](bus-stop)
+- Will the bus pass by [Chung Cheng High Sch](bus-stop)
+- Will it go to [Opp Yio Chu Kang Stn](bus-stop)
+- Bus stop [Tampines JC/Opp Blk 390](bus-stop)
+- Can this bus transfer me to go [Hougang St 16](bus-stop)
+- Bus can reach [Bidadari Park Dr](bus-stop)?
+- Will this bus pass by the stop [Fernvale Pr Sch](bus-stop)?
+- Going to bus stop [C'Wealth Stn Exit A/D](bus-stop)
+- Will you go to [Opp Coronation Plaza](bus-stop)
+- Can transfer to [Pasir Panjang Stn](bus-stop)
+- Will this bus pass near [Temasek Poly](bus-stop) direction
+- Can this bus transfer me to [Yishun JC](bus-stop)
+- Does this service go around [First Toa Payoh Pr Sch](bus-stop)
+- Will it go to [Queenstown Stn Exit B/C](bus-stop)?
+- Do you go to [Braddell Stn/Blk 111](bus-stop)
+- Is this going to [Meridian Stn Exit B](bus-stop)
+- Will the bus stop at [Kadaloor Stn Exit A](bus-stop)
+- Does this stop at [Kallang Stn/Opp Blk 2C](bus-stop)
+- Does the bus go to [Opp Marymount Stn](bus-stop)
+- Can it go to [Opp Waterway Pr Sch](bus-stop)
+- Can you tell me if bus go to [Botanic Gardens](bus-stop)
+- Can I go to [Opp Jelapang Stn](bus-stop)
+- Please tell me if this bus goes to [Suntec City](bus-stop)
+- Can this bus alight me at [Somerset Stn](bus-stop)
+- Does the bus travel near [Macpherson Stn Exit B](bus-stop)
+- Can you check for me if this bus is going to [Opp Great World City](bus-stop)
+- Can this bus bring me to [Toa Payoh Ave 3](bus-stop)
+- Is it this passing by [Aft Innova Pr Sch](bus-stop)
+- Stopping at [Opp Chongfu Pr Sch](bus-stop)?
+- Can this bus transfer to [Telok Ayer Stn](bus-stop)
+- Got go [Bt Gombak Stn](bus-stop)?
+- Hi can you go [Meridian JC](bus-stop)
+- Will the bus go to [Royal Plaza On Scotts](bus-stop)
+- Would you pass by nearby [Cove Stn Exit B](bus-stop)
+- Whether this bus will go near to [Woodleigh Stn Exit A](bus-stop)
+- Am I able to reach [Evergreen Sec Sch](bus-stop)
+- Can I take the bus to [Opp Ang Mo Kio Pr Sch](bus-stop)
+- Are we going to [Bishan Pk Sec Sch](bus-stop)
+- I would like to know if this bus can transfer me to my destination
+- I would like to know if this bus can transfer me to LRT
+- Is this bus going to [Woodleigh Stn Exit A](bus-stop)
+- Will it pass by [Temasek JC](bus-stop) or somewhere near [Temasek JC](bus-stop)?
+- Does this bus goes to [Evergreen Pr Sch stop](bus-stop)
+- Bus are you going [Aft Punggol Pt Stn](bus-stop)
+- Can this bus alight me at my destination?
+- Can this bus bring me to reach [Sin Ming Rd](bus-stop)?
+- Check if going [Opp Great World City](bus-stop)
+- Do you stop at [Opp Fernvale Pr Sch](bus-stop)
+- Does the bus go to [S'Goon Stn Exit B](bus-stop)
+- Is it going to [NUS Fac Of Engrg](bus-stop)
+- Is this bus going to [Jurong Sec Sch](bus-stop)
+- Is [Orchard Stn/Lucky Plaza](bus-stop) a stop on the route
+- Will you go to [Toa Payoh Swim Cplx](bus-stop)
+- Will you pass in the vicinity of [Opp Bt Gombak Stn](bus-stop)
+- Is it going to [Opp Ten Mile Junction Stn](bus-stop)
+- I would like to know if this bus can transfer me to MRT
+- I would like to know if this bus can transfer me to nearest MRT
+- Bus travelling to [Paya Lebar Stn Exit C](bus-stop)?
+- Can transfer me to [Woodlands Ave 5](bus-stop)?
+- Transfer to [Kadaloor Stn Exit A](bus-stop)
+- Does the bus reach [Soo Teck Stn](bus-stop)
+- Is bus [67](bus-num) goes to [Jurong Sec Sch](bus-stop)?
+- May I know if we'll stop at [Opp Jurong JC](bus-stop)
+- Does the bus pass through [Stamford Primary Sch](bus-stop), [Shaw Plaza](bus-stop) and [Opp Thomson Plaza](bus-stop)
+- Go by [Opp Zhongshan Mall](bus-stop)?
+- If arrive [Opp Jurong Sec Sch](bus-stop)
+- Does this bus go to [Yuhua Sec Sch](bus-stop)
+- Bus en route to [Damai Stn Exit A](bus-stop)?
+- Is the bus passing through [Aft Pasir Panjang Stn](bus-stop)
+- Is the bus going to place/building/landmark [Catholic JC](bus-stop)?
+- Can I reach near [East Spring Sec Sch](bus-stop)
+- Do you pass by [Tiong Bahru Plaza](bus-stop)
+- Will it go to bus stop [Coral Edge Stn Exit A](bus-stop)?
+- Is it going to [Damai Stn Exit A](bus-stop)
+- Going to stop [Marsiling Pr Sch](bus-stop)
+- Going to [Newton Stn Exit B](bus-stop)?
