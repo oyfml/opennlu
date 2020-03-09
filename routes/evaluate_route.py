@@ -7,7 +7,7 @@ import os
 import json
 
 
-DATA_FOLDER = 'opennlu/data'
+DATA_FOLDER = os.path.join('opennlu/data','data')
 app.config['DATA_FOLDER'] = DATA_FOLDER
 PLOTS_FOLDER = os.path.join('opennlu/static', 'plots') # for file check
 app.config['PLOTS_FOLDER'] = PLOTS_FOLDER
@@ -35,10 +35,10 @@ def evaluate():
                 session['entity_scores'] = [item['confidence'] for idx, item in enumerate(entities)]
                 session['entity_extractors'] = [item['extractor'] for idx, item in enumerate(entities)]
             else: #no entities found
-                session['entity_names'] = ['None']
-                session['entity_types'] = ['None']
-                session['entity_scores'] = [0.0000000000000000]
-                session['entity_extractors'] = ['None']
+                session['entity_names'] = ['-nil-']
+                session['entity_types'] = ['-nil-']
+                session['entity_scores'] = ['-']
+                session['entity_extractors'] = ['-nil-']
         #Test data set
         else:
             test_data = request.files['testfile']

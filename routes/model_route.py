@@ -8,7 +8,7 @@ import json
 
 IMAGE_FOLDER = os.path.join('/static', 'img')
 app.config['IMAGE_FOLDER'] = IMAGE_FOLDER
-DATA_FOLDER = 'opennlu/data'
+DATA_FOLDER = os.path.join('opennlu/data', 'data')
 app.config['DATA_FOLDER'] = DATA_FOLDER
 RASA_FOLDER = os.path.join('opennlu/data', 'rasa_pipeline')
 app.config['RASA_FOLDER'] = RASA_FOLDER
