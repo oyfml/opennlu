@@ -33,14 +33,21 @@
     <hr>
     <form method = "POST" name = "train_form" enctype = "multipart/form-data" onsubmit="return showBar()">
         <div class="row">
+            <div class="col-6">
+                <h6><span class="badge badge-secondary">Step 3.</span> Give Model Name</h6>
+                <div class="alert alert-warning alert-dismissible">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>WARNING:</strong> Training a new NLU model may take a few minutes.
+                </div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col">
                 <div class="form-group">
-                    <h6><span class="badge badge-secondary">Step 3.</span> Give Model Name</h6><br>
                     <input class="form-control" name="model_id" id="model_id" type="text" value="{{model_id}}" />
                 </div>
             </div>
             <div class="col">
-                <br><br>
                 <input type="submit" class="btn btn-primary" id="train" value="Start Training"/>
                 <button class="btn btn-primary" id="trainDiv" type="button" style="display:none" disabled>
                     <div class="loader"></div>

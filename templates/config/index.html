@@ -12,9 +12,13 @@
 <br>
 <div class="container-fluid">
     <div class="col">
-        <div class="card " >
+        <div class="card" style="display:inline-block; width:50%" >
             <h6 class="card-header bg-secondary text-white" >Create <span class="badge badge-primary" style="font-size: 16px">New</span></h6>
             <div class="card-body">
+                <div class="alert alert-info alert-dismissible">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>INFO:</strong> Check out rasa nlu component pipeline configurations for details regarding what components you should use in your configuration file.
+                </div>
                 <form method = "POST" name = "Form" enctype = "multipart/form-data" onsubmit="return checkForm()">
                     <input  type = "text" name = "new_name" placeholder =" Enter filename" style="margin-right: 15px"/>
                     <input class = "btn-sm btn-primary" type = "submit" value = "Create" name = "create"/>
@@ -23,12 +27,16 @@
         </div>
     </div>
     <br>
-    <hr>
+    <hr style="display:inline-block; width:50%">
     <br>
     <div class="col">
-        <div class="card">
+        <div class="card" style="display:inline-block; width:50%">
             <h6 class="card-header bg-secondary text-white" >Update <span class="badge badge-dark" style="font-size: 16px">Existing</span></h6>
             <div class="card-body">
+                <div class="alert alert-warning alert-dismissible">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>WARNING:</strong> ConveRT pipeline requires tensorflow-text package, which is currently only support by MAC or Linux OS.
+                </div>
                     <form method = "POST" name = "FileForm" enctype = "multipart/form-data" onsubmit="return checkFile(this.form)">
                         <input type = "file" name = "file" placeholder = "Please choose a file"  style="margin-right: 15px"/>
                         <input class = "btn-sm btn-secondary" type = "submit" value = "Open" name = "open"/>

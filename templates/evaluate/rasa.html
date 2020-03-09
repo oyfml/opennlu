@@ -229,7 +229,7 @@
                     <span data-toggle="tooltip" title="From Rasa v1.3 onwards, NER evaluation metric will no longer include no-entity labels in the report of the weighted precision and f1-score. As most of the tokens do not have an entity set, it will influence the weighted precision and f1-score significantly. The overall metrics will only include proper entities. You might see a drop in the performance scores when running the evaluation in newer versions.">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12" y2="17"></line></svg>
                     </span>
-                    {% if ent_metrics is defined %}
+                    {% if ent_metrics is defined and ent_metrics%}
                     <div class="alert alert-info alert-dismissible">
                         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                         <strong>INFO:</strong> The CRFEntityExtractor is the only entity extractor which you train using your own data, and so is the only one that will be report recall, precision and f1 measure. If you use the spaCy or duckling pre-trained entity extractors, Rasa NLU will not include measure metrics in the evaluation.
@@ -259,29 +259,52 @@
                     </div>
                     <br>
                     {% endfor %}
+                    {% elif ent_metrics is defined and ent_metrics|length == 0 %}
+                    <div class="row">
+                        <div class="col">
+                            Extractor:
+                            <input type="text" class="form-control" value="-nil-" readonly>
+                        </div> 
+                        <div class="col">
+                            Weighted Accuracy:
+                            <input type="text" class="form-control" value="-" readonly>
+                        </div> 
+                        <div class="col">
+                            Weighted F1-Score:
+                            <input type="text" class="form-control" value="-" readonly>
+                        </div>
+                        <div class="col">
+                            Weighted Precision:
+                            <input type="text" class="form-control" value="-" readonly>
+                        </div>
+                        <div class="col-sm-1">
+                            <br>
+                        </div>
+                    </div>
+                    <br>
                     {% else %}
                     <div class="row">
-                            <div class="col">
-                                Extractor:
-                                <input type="text" class="form-control" value="" readonly>
-                            </div> 
-                            <div class="col">
-                                Weighted Accuracy:
-                                <input type="text" class="form-control" value="" readonly>
-                            </div> 
-                            <div class="col">
-                                Weighted F1-Score:
-                                <input type="text" class="form-control" value="" readonly>
-                            </div>
-                            <div class="col">
-                                Weighted Precision:
-                                <input type="text" class="form-control" value="" readonly>
-                            </div>
-                            <div class="col-sm-1">
-                                <br>
-                            </div>
+                        <div class="col">
+                            Extractor:
+                            <input type="text" class="form-control" value="" readonly>
+                        </div> 
+                        <div class="col">
+                            Weighted Accuracy:
+                            <input type="text" class="form-control" value="" readonly>
+                        </div> 
+                        <div class="col">
+                            Weighted F1-Score:
+                            <input type="text" class="form-control" value="" readonly>
                         </div>
-                        <br>
+                        <div class="col">
+                            Weighted Precision:
+                            <input type="text" class="form-control" value="" readonly>
+                        </div>
+                        <div class="col-sm-1">
+                            <br>
+                        </div>
+                    </div>
+                    <br>
                     {% endif %}
                     <div class="form-group" id="entity_log" style="display:none">
                         <div class="row">
