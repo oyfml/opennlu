@@ -15,25 +15,40 @@
         <div class="col-4">
             <ul class="list-group centred">
                 <a class="list-group-item  " style="background-color: #82009c; text-align: center; color: white;"><b>RASA</b></a>
-                {% if not_loaded_list|length > 0 %}
-                {% for model in not_loaded_list %}
+                {% if rasa_not_loaded_list|length > 0 %}
+                {% for model in rasa_not_loaded_list %}
                     <!--loop.index0 is index of jinja for loop-->
-                    <a id="{{loop.index0}}" onclick="showLoading({{loop.index0}})" href="/load/adding?model={{model}}" class="list-group-item" style="text-align: center;">{{model}} &nbsp&nbsp<div id="load_{{loop.index0}}" class="loader" style="display: none;"></div></a>
+                    <a id="rasa_{{loop.index0}}" onclick="showLoadingRASA({{loop.index0}})" href="/load/adding?model={{model}}&type={{'rasa'}}" class="list-group-item" style="text-align: center;">{{model}} &nbsp&nbsp<div id="rasa_load_{{loop.index0}}" class="loader" style="display: none;"></div></a>
                 {% endfor %}
                 {% else %}
-                    <a class="list-group-item" style="color: red; font-size: 12px; text-align: center;">No available trained models to load</a>
+                   
                 {% endif %}
             </ul>
         </div>
         <div class="col-4">
             <ul class="list-group centred">
                 <a class="list-group-item  " style="background-color: #07af92; text-align: center; color: #ffa500;"><b>TensorFlow</b></a>
-  
+                {% if tf_not_loaded_list|length > 0 %}
+                {% for model in tf_not_loaded_list %}
+                    <!--loop.index0 is index of jinja for loop-->
+                    <a id="tf_{{loop.index0}}" onclick="showLoadingTF({{loop.index0}})" href="/load/adding?model={{model}}&type={{'tensorflow'}}" class="list-group-item" style="text-align: center;">{{model}} &nbsp&nbsp<div id="tf_load_{{loop.index0}}" class="loader" style="display: none;"></div></a>
+                {% endfor %}
+                {% else %}
+        
+                {% endif %}
             </ul>
         </div>
         <div class="col-4">
             <ul class="list-group centred">
                 <a class="list-group-item  " style="background-color: #f0f0f0; text-align: center; color: #ff4800;"><b>PyTorch</b></a>
+                {% if pt_not_loaded_list|length > 0 %}
+                {% for model in pt_not_loaded_list %}
+                    <!--loop.index0 is index of jinja for loop-->
+                    <a id="pt_{{loop.index0}}" onclick="showLoadingPT({{loop.index0}})" href="/load/adding?model={{model}}&type={{'pytorch'}}" class="list-group-item" style="text-align: center;">{{model}} &nbsp&nbsp<div id="pt_load_{{loop.index0}}" class="loader" style="display: none;"></div></a>
+                {% endfor %}
+                {% else %}
+                
+                {% endif %}
             </ul>
         </div>
     
@@ -44,9 +59,21 @@
 {% block scripts %}
 <script type="text/javascript">
 
-    function showLoading(index){
-        document.getElementById('load_'+index).style.display = "";
-        document.getElementById(index).className = "list-group-item active"
+    function showLoadingRASA(index){
+        document.getElementById('rasa_load_'+index).style.display = "";
+        document.getElementById('rasa_'+index).className = "list-group-item active"
+        return true;
+    }
+
+    function showLoadingTF(index){
+        document.getElementById('tf_load_'+index).style.display = "";
+        document.getElementById('tf_'+index).className = "list-group-item active"
+        return true;
+    }
+
+    function showLoadingPT(index){
+        document.getElementById('pt_load_'+index).style.display = "";
+        document.getElementById('pt_'+index).className = "list-group-item active"
         return true;
     }
 

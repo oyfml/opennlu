@@ -1,6 +1,15 @@
 {% extends "layout.html" %}
 
 {% block content %}
+<style>
+    .wrong {
+        background-color: rgb(255, 154, 154);
+    }
+    .correct {
+        background-color: rgb(213, 255, 151);
+    }
+</style>
+
 <br>
 <div>
     <h4>Model Evaluation</h4>
@@ -204,8 +213,8 @@
                                 {% for i in range(0,list_size) %}
                                     <tr>
                                         <td>{{i+1}}</td>
-                                        <td>{{int_results[0][i]}}</td>
-                                        <td>{{int_results[1][i]}}</td>
+                                        <td {% if int_results[0][i] == int_results[1][i] %} class="correct" {% else %} class="wrong" {% endif %}>{{int_results[0][i]}}</td>
+                                        <td {% if int_results[0][i] == int_results[1][i] %} class="correct" {% else %} class="wrong" {% endif %}>{{int_results[1][i]}}</td>
                                         <td>{{int_results[2][i]}}</td>
                                         <td>{{int_results[3][i]}}</td>
                                     </tr>
@@ -353,9 +362,9 @@
                                     <td>{{i+1}}</td>
                                     <td>
                                         <div class="list-group">
-                                        {% for value in ent_results[0][i]%}
-                                            <div class="list-group-item">{{value[0]}}</div>
-                                        {% endfor %}
+                                            {% for value in ent_results[0][i]%}
+                                                <div class="list-group-item">{{value[0]}}</div>
+                                            {% endfor %}
                                         </div>
                                     </td>
                                     <td>

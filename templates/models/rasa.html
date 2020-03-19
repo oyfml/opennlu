@@ -4,7 +4,7 @@
 <br>
 <div>
     <h5><img src="{{ rasa_icon }}" class="img-thumbnail" alt="RASA" width="50"> {{rasa_model}}</h5>   
-    <div>Train your agent's machine learning model by adding new training phrases and intents. Configure NLU pipeline to customise model performance.</div>
+    <div>Train your agent's machine learning model by adding new training phrases and intents in the form of markdown or json fomat. Configure NLU pipeline to customise model components and performance.</div>
 </div>
 <hr/>
 <div class="container-fluid">
@@ -17,7 +17,7 @@
                 <input class="btn-sm btn-secondary" type="submit" value="Add" name="data" id="data" style="margin-left: 15px"/>
             </form>
             <br>
-            <textarea class="form-control" rows="5" cols="70" readonly>{{train_data}}</textarea>
+            <textarea class="form-control" id="data_file" rows="5" cols="70" readonly="true">{{train_data}}</textarea>
         </div>
         <div class="col">
             <h6><span class="badge badge-secondary">Step 2.</span> Choose RASA Pipeline</h6>
@@ -27,7 +27,7 @@
                 <input class="btn-sm btn-secondary" type="submit" value="Add" name="config" style="margin-left: 15px"/>
             </form>
             <br>
-            <textarea class="form-control" rows="5" cols="70" readonly>{{config_data}}</textarea>
+            <textarea class="form-control" id="config_file" rows="5" cols="70" readonly="true">{{config_data}}</textarea>
         </div>
     </div> 
     <hr>
@@ -35,9 +35,10 @@
         <div class="row">
             <div class="col-6">
                 <h6><span class="badge badge-secondary">Step 3.</span> Give Model Name</h6>
+                <br>
                 <div class="alert alert-warning alert-dismissible">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                    <strong>WARNING:</strong> Training a new NLU model may take a few minutes.
+                    <strong>WARNING:</strong> Training a new NLU model may take several minutes.
                 </div>
             </div>
         </div>
@@ -107,9 +108,8 @@
 
     //Checks for all pre-req for rasa train before submit
     function showBar() {
-        var ready = '{{ ready }}';
         //No training data or config file selected
-        if (ready == 'False'){
+        if ((document.getElementById("data_file").value == "" )||(document.getElementById("config_file").value == "")){
             alert('Please select Training Data and Configuration File.');
             return false;
         //No model name given

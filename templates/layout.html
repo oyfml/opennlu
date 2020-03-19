@@ -75,7 +75,7 @@
                     <li class="nav-item">
                         <a class="nav-link {{"active" if request.path.lower().startswith("/info") else "" }}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg> Models
-                            <span class="badge {{"badge-primary" if request.path.lower().startswith("/info") else "badge-secondary" }}" style="font-size: 80%">{{rasa_list_size}}</span>
+                            <span class="badge {{"badge-primary" if request.path.lower().startswith("/info") else "badge-secondary" }}" style="font-size: 80%">{{rasa_list_size + pytorch_list_size + tensorflow_list_size}}</span>
                         </a>
                     </li>
                     <div class="container">
@@ -83,7 +83,13 @@
                             <!--Model Box-->
                             {% if curr_model != "" %}
                                 {% for i in range(0,rasa_list_size) %}
-                                <a href="/change?name={{rasa_list[i]}}" class="list-group-item {{"active" if curr_model == rasa_list[i]  else "" }}" style="font-size: 88%;">{{rasa_list[i]}}</a>
+                                <a href="/change?name={{rasa_list[i]}}&type={{'rasa'}}" class="list-group-item {{"active" if curr_model == rasa_list[i]  else "" }}" style="font-size: 88%;">{{rasa_list[i]}}</a>
+                                {% endfor %}
+                                {% for i in range(0,pytorch_list_size) %}
+                                <a href="/change?name={{pytorch_list[i]}}&type={{'pytorch'}}" class="list-group-item {{"active" if curr_model == pytorch_list[i]  else "" }}" style="font-size: 88%;">{{pytorch_list[i]}}</a>
+                                {% endfor %}
+                                {% for i in range(0,tensorflow_list_size) %}
+                                <a href="/change?name={{tensorflow_list[i]}}&type={{'tensorflow'}}" class="list-group-item {{"active" if curr_model == tensorflow_list[i]  else "" }}" style="font-size: 88%;">{{tensorflow_list[i]}}</a>
                                 {% endfor %}
                             {% else %}
                                 <div class="list-group-item" style="height:50%"> </div>
