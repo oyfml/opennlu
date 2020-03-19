@@ -30,7 +30,6 @@ class RASA_dict(object):
 
 # rasa model
 class RASA(object):
-
     def __init__(self, name, data, pipeline):
         self.name = name
         self.data = data #training data
