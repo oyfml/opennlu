@@ -1,0 +1,244 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<body onload="checkFailure()">
+<br>
+<div>
+    <h5><img src="{{ tf_icon }}" class="img-thumbnail" alt="Tensorflow" width="50"> {{tf_model}}</h5>   
+    <div>Train your JointBERT model by adding training and validation examples in the form of labels, seq.in and seq.out files. Configure model type and training parameters for customised performance.</div>
+</div>
+<hr/>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <h6><span class="badge badge-secondary">Step 1.</span> Choose Training Data</h6>
+            <br>
+            <form method="POST" name="train_form" enctype="multipart/form-data" onsubmit="return checkTrainFolder()">
+                <input type="file" name = "train_folder" id = "train_folder" style="margin-left: 15px" webkitdirectory mozdirectory />
+                <input class="btn-sm btn-secondary" type="submit" value="Add" name="train_data" id="train_data" style="margin-left: 15px"/>
+            </form>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-3">
+          <label for="label_title" class="col-sm-3 control-label">Intent:</label>
+        </div>
+        <div class="col-sm-4">
+          <label for="text_title" class="col-sm-4 control-label">Text Sequence:</label>
+        </div>
+        <div class="col-sm-5">
+          <label for="tags_title" class="col-sm-5 control-label">BIO Tag:</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <textarea class="form-control" name="train_label_content" id="train_label_content" rows="5" style="font-size: 10px" readonly="true" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">{{train_label_content}}</textarea>
+        </div>
+    
+        <div class="col-sm-4">
+          <textarea class="form-control" name="train_text_content" id="train_text_content" rows="5" style="font-size: 10px" readonly="true" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">{{train_text_content}}</textarea>
+        </div>
+          
+        <div class="col-sm-5">
+          <textarea class="form-control" name="train_tags_content" id="train_tags_content" rows="5" style="font-size: 10px" readonly="true" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">{{train_tags_content}}</textarea>
+        </div>
+    </div>
+    <br><hr>
+    <div class="row">
+        <div class="col">
+            <h6><span class="badge badge-secondary">Step 2.</span> Choose Validation Data</h6>
+            <br>
+            <form method="POST" name="valid_form" enctype="multipart/form-data" onsubmit="return checkValidFolder()">
+                <input type="file" name = "valid_folder" style="margin-left: 15px" webkitdirectory mozdirectory />
+                <input class="btn-sm btn-secondary" type="submit" value="Add" name="valid_data" id="valid_data" style="margin-left: 15px"/>
+            </form>
+        </div>
+    </div>
+    <br>
+
+    <div class="row">
+        <div class="col-sm-3">
+          <label for="label_title" class="col-sm-3 control-label">Intent:</label>
+        </div>
+        <div class="col-sm-4">
+          <label for="text_title" class="col-sm-4 control-label">Text Sequence:</label>
+        </div>
+        <div class="col-sm-5">
+          <label for="tags_title" class="col-sm-5 control-label">BIO Tag:</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <textarea class="form-control" name="valid_label_content" id="valid_label_content" rows="5" style="font-size: 10px" readonly="true" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">{{valid_label_content}}</textarea>
+        </div>
+    
+        <div class="col-sm-4">
+          <textarea class="form-control" name="valid_text_content" id="valid_text_content" rows="5" style="font-size: 10px" readonly="true" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">{{valid_text_content}}</textarea>
+        </div>
+          
+        <div class="col-sm-5">
+          <textarea class="form-control" name="valid_tags_content" id="valid_tags_content" rows="5" style="font-size: 10px" readonly="true" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">{{valid_tags_content}}</textarea>
+        </div>
+    </div>
+    <br><hr>
+    <div class="row">
+        <div class="col">
+            <h6><span class="badge badge-secondary">Step 3.</span> Configure Training Parameters</h6>
+        </div>
+    </div>
+    <br>
+    <form method = "POST" name = "parameter_form" enctype = "multipart/form-data" onsubmit="return checkForm()">
+    <div class="row">
+        <div class="col">
+            Model Type: 
+            <select class="form-control" name="type_sel" id="type_sel" style="font-size: 14px">
+                <option value='bert'>BERT</option>
+                <option value='albert'>ALBERT</option>
+            </select>
+        </div>
+        <div class="col">
+            Batch Size: 
+            <input class="form-control" name="batch_size" id="batch_size" type="text" placeholder="64" style="font-size: 14px"/>
+        </div>
+        <div class="col">
+            Number of Epochs: 
+            <input class="form-control" name="epoch_num" id="epoch_num" type="text" placeholder="5-10" style="font-size: 14px"/>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            CRF:
+            <select class="form-control" name="crf_sel" id="crf_sel" style="font-size: 14px">
+                <option value='no'>No</option>
+                <option value='yes'>Yes</option>
+            </select>
+        </div>
+        <div class="col">
+            Max Sequence Length: 
+            <input class="form-control" name="max_seq_len" id="max_seq_len" type="text" placeholder="-" style="font-size: 14px" value="{{ max_seq_len }}" readonly="true"/>
+        </div>
+        <div class="col">
+            Learning Rate:
+            <input class="form-control" name="learn_rate" id="learn_rate" type="text" placeholder="5e-5" style="font-size: 14px"/>
+        </div>
+    </div>
+    <br><hr>
+        <div class="row">
+            <div class="col-6">
+                <h6><span class="badge badge-secondary">Step 4.</span> Give Model Name</h6>
+                <br>
+                <div class="alert alert-warning alert-dismissible">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>WARNING:</strong> Training a new JointBERT model may take a several minutes.
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <input class="form-control" name="model_id" id="model_id" type="text" style="font-size: 14px"/>
+                </div>
+            </div>
+            <div class="col">
+                <input type="submit" class="btn btn-primary" id="train" value="Start Training"/>
+                <button class="btn btn-primary" id="trainDiv" type="button" style="display:none" disabled>
+                    <div class="loader"></div>
+                    Training...
+                </button>
+            </div>
+        </div>
+    </form>
+    <br><br>
+</div>
+</body>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+
+    //Shows alert for any failures
+    function checkFailure() {
+        var fail = '{{ fail }}';
+        var fail_msg = '{{ fail_message }}';
+        if (fail == 'True'){
+            alert(fail_msg);
+        } 
+    }
+
+    //Checks if folder selected
+    function checkTrainFolder(){
+        var fileVal = document.forms['train_form']["train_folder"].value;
+        //Checks if file selected
+        if(fileVal != ""){
+            return true;
+        } else {
+            alert("No folder has been chosen. Please select a folder.");
+            return false;
+        }
+    } 
+
+    //Checks if folder selected
+    function checkValidFolder(){
+        var fileVal = document.forms['valid_form']["valid_folder"].value;
+        //Checks if file selected
+        if(fileVal != ""){
+            return true;
+        } else {
+            alert("No folder has been chosen. Please select a folder.");
+            return false;
+        }
+    } 
+
+    //Checks for empty fields in text box
+    function checkForm() {
+        //Check if all hyperparameters are entered
+        var bs = document.forms["parameter_form"]["batch_size"].value;
+        if (bs == null || bs == "") {
+            alert("Please fill in batch size.");
+            return false;
+        }else if(isNaN(bs)) {
+            alert("Please input numbers only for batch size.");
+            return false;
+        }
+        var en = document.forms["parameter_form"]["epoch_num"].value;
+        if (en == null || en == "") {
+            alert("Please fill in number of epochs.");
+            return false;
+        } else if(isNaN(en)) {
+            alert("Please input numbers only for number of epochs.");
+            return false;
+        }
+        var lr = document.forms["parameter_form"]["learn_rate"].value;
+        if (lr == null || lr == "") {
+            alert("Please fill in learning rate.");
+            return false;
+        } else if(isNaN(lr)) {
+            alert("Please input numbers only for learning rate.");
+            return false;
+        }
+
+        //No training data or validation data selected
+        if ((document.getElementById("train_label_content").value == "" )||(document.getElementById("valid_label_content").value == "")){
+            alert('Please select Training and Validation Data.');
+            return false;
+        //No model name given
+        }else if (!document.getElementById('model_id').value){
+            alert('Please give Model Name.')
+            return false;
+        //Show loading bar and proceed
+        }else{
+            document.getElementById('trainDiv').style.display = "block";
+            document.getElementById('train').style.display = "none";
+            return true;
+        }
+
+        return true;
+    }
+
+
+</script>
+{% endblock %}

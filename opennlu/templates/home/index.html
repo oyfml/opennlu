@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="jumbotron">
+  <h1 style="color: rgb(96, 100, 100);">OpenNLU</h1 s>
+  <br>
+  <h6>OpenNLU is a front-end interface for Natural Language Understanding (NLU) development, powered by RASA, Tensorflow and PyTorch.</h6>
+  <p> 
+    <br>
+    NLU is a subdomain of Natural Language Processing (NLP), which performs the task of Named Entity Recognition and Intent Classification.
+    <br>
+    The goal is to understand the user's utterance, which is to interpret the intent of the request and extract key information.
+    <br>
+    In dialogue systems, the NLU component produces a structural representation of the user request, so that subsequent dialogue components can process and perform their NLP tasks.
+  </p>
+</div>
+
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="static/img/rasa_homepage.jpg" alt="RASA" style="height: 400px;width: 100%;">
+      <div class="carousel-caption">
+        <h3 style="color:black">Build Natural Language Understanding Models with RASA</h3>
+        <p>Rasa NLU is an open-source natural language processing tool for intent classification and entity extraction.<br>
+          It provides infrastructure and tools necessary for building high-performing, resilient, contextual NLU models.<br>
+          A comprehensive set of cutting-edge NLU components and customisable development pipeline is available to suit application requirements.
+          
+        </p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="static/img/tf_homepage.jpg" alt="Tensorflow" style="height: 400px;width: 100%;">
+      <div class="carousel-caption">
+        <h3 style="color:black">Build Natural Language Understanding Models with Tensorflow </h3>
+        <p>TensorFlow is an end-to-end open source platform for machine learning.<br>
+          This custom feature in OpenNLU supports the fine-tuning of Joint Intent Classification and Slot-Filling model <br>
+          based on BERT (Bidirectional Encoder Representations from Transformers) for Natural Language Understanding.
+
+        </p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="static/img/pt_homepage.jpg" alt="PyTorch" style="height: 400px;width: 100%;">
+      <div class="carousel-caption">
+          <h3 style="color:black">Build Natural Language Understanding Models with PyTorch </h3>
+          <p>PyTorch is an open source machine learning library based on the Torch library.<br>
+            This custom feature in OpenNLU supports the fine-tuning of Joint Intent Classification and Slot-Filling model <br>
+            based on BERT (Bidirectional Encoder Representations from Transformers) for Natural Language Understanding.
+          </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+
+</div>
+<br><br>
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}

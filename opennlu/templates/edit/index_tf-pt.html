@@ -1,0 +1,212 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!--Index for TF/PT-->
+
+<body onload="checkFailure()">
+<br>
+<div class="row">
+    <div class="col-sm-9">
+        <h4>Training Data </h4>
+        Create and Manage BIO-tagged NLU training examples for Tensorflow and PyTorch.
+    </div>
+    <div class="col-sm-3">
+        <ul class="pagination">
+            <li class="page-item "><a class="page-link" href="/edit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><polyline points="11 17 6 12 11 7"></polyline><polyline points="18 17 13 12 18 7"></polyline></svg>
+                Switch to RASA
+            </a></li>
+        </ul>   
+    </div> 
+</div>
+<hr/>
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm">
+            <div class="card" style="display:inline-block; width:90%" >
+                <h6 class="card-header bg-secondary text-white" >
+                    Create <span class="badge badge-primary" style="font-size: 16px">New</span></h6>
+                <div class="card-body">
+                    <div class="alert alert-info alert-dismissible">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>INFO:</strong> Create a new data folder with label, seq.in and seq.out files.
+                    </div>
+                    <div class="alert alert-warning alert-dismissible">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>WARNING:</strong> Do not edit the filenames externally, otherwise interface will not be able to recognise files.
+                    </div>
+                    <form method = "POST" name = "Form" enctype = "multipart/form-data" onsubmit="return checkForm()">
+                        <input  type = "text" name = "new_name" placeholder =" Enter new filename" style="margin-right: 15px"/>
+                        <div class="loader" id="CreateDiv" style="display:none"></div>
+                        <input class = "btn-sm btn-primary" type = "submit" value = "Create" name = "create"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="card" style="display:inline-block; width:90%">
+                <h6 class="card-header bg-secondary text-white" >
+                    Update
+                    <span class="badge badge-dark" style="font-size: 16px">Existing</span>
+                </h6>
+                <div class="card-body">
+                    <div class="alert alert-info alert-dismissible">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>INFO:</strong> Select data folder to edit, only upload recognised files.
+                    </div>
+                    <div class="alert alert-warning alert-dismissible">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>WARNING:</strong> Folder uploaded must only contain 3 files with the filenames: label, seq.in and seq.out.
+                    </div>
+                    <form method = "POST" name = "FolderForm" enctype = "multipart/form-data" onsubmit="return checkFolder()">
+                        <input type="file" name = "folder" style="margin-right: 15px" webkitdirectory mozdirectory />
+                        <div class="loader" id="OpenDiv" style="display:none"></div>
+                        <input class = "btn-sm btn-secondary" type = "submit" value = "Open" name = "open"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<br>
+<hr>
+<br>
+<div class="container-fluid">
+    <h4>Convert Data</h4>
+    <div>
+        Convert existing NLU training datasets between RASA and Tensorflow/PyTorch format for subsequent training in the desired framework.
+    </div>
+    <hr>
+    <br>
+    <div class="row">
+        <div class="col-sm">
+            <div class="card" style="display:inline-block; width:80%">
+                <h6 class="card-header bg-secondary text-white" >
+                    <button type="button" class="btn btn-outline-light" disabled>RASA</button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><line x1="4" y1="12" x2="20" y2="12"></line><polyline points="14 6 20 12 14 18"></polyline></svg>
+                    <button type="button" class="btn btn-outline-light" disabled>TF/PT</button>
+                </h6>
+                <div class="card-body" >
+                    <div class="alert alert-info alert-dismissible">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>INFO:</strong> Select RASA data file (md or json) to be converted into label, seq.in, seq.out files.
+                    </div>
+                    <form method = "POST" name = "ConvertRasaForm" enctype = "multipart/form-data" onsubmit="return checkFile(this.form)">
+                        <input type = "file" name = "convert_rasa_file"  style="margin-right: 15px"/>
+                        <div class="loader" id="ConvertRasaDiv" style="display:none"></div>
+                        <input class = "btn-sm btn-primary" type = "submit" value = "Convert" name = "convert_rasa" id = "convert_rasa"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="card" style="display:inline-block; width:80%">
+                <h6 class="card-header bg-secondary text-white" >
+                    <button type="button" class="btn btn-outline-light" disabled>TF/PT</button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><line x1="4" y1="12" x2="20" y2="12"></line><polyline points="14 6 20 12 14 18"></polyline></svg>
+                    <button type="button" class="btn btn-outline-light" disabled>RASA</button>
+                </h6>
+                <div class="card-body" >
+                    <div class="alert alert-info alert-dismissible">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>INFO:</strong> Select data folder to be converted into RASA markdown format.
+                    </div>
+                    <div class="alert alert-warning alert-dismissible">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>WARNING:</strong> Folder uploaded must only contain 3 files with the filenames: label, seq.in and seq.out.
+                    </div>
+                    <form method = "POST" name = "ConvertTfPtForm" enctype = "multipart/form-data" onsubmit="return checkConvertFolder()">
+                        <input type="file" name = "convert_tf_pt_folder" style="margin-right: 15px" webkitdirectory mozdirectory />
+                        <div class="loader" id="ConvertTfPtDiv" style="display:none"></div>
+                        <input class = "btn-sm btn-primary" type = "submit" value = "Convert" name = "convert_tf_pt" id = "convert_tf_pt"/>
+                        <span data-toggle="tooltip" title="Saves resulting file in .md format. For .json format, please use convert feature on RASA page.">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity" ><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="8"></line></svg>
+                        </span>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+ 
+    <br><br>
+</div>
+</body>
+
+{% endblock %}
+
+{% block scripts %}
+   
+<script type="text/javascript">
+
+    //Shows alert for any failures
+    function checkFailure() {
+        var fail = '{{ fail }}';
+        var fail_msg = '{{ fail_message }}';
+        if (fail == 'True'){
+            alert(fail_msg);
+        } 
+    }
+
+    //Checks for empty fields in text box
+    function checkForm() {
+        //Check if filename is entered
+        var a = document.forms["Form"]["new_name"].value;
+        if (a == null || a == "") {
+            alert("Please fill in filename");
+            return false;
+        }
+        document.getElementById('CreateDiv').style.display = "";
+    }
+
+    //Checks for existing file with correct file type
+    function checkFile(){
+        var fileVal = document.forms["ConvertRasaForm"]["convert_rasa_file"].value;
+        //RegEx for valid file name and extensions.
+        var pathExpression = "[?:[a-zA-Z0-9-_\.]+(?:.md|.json)";
+        //Checks for wrong file type
+        if(fileVal != ""){
+            if(!fileVal.toString().match(pathExpression)){
+                alert("Invalid file type. Please select .md / .json file type.");
+                return false;
+            }else{
+                document.getElementById('ConvertRasaDiv').style.display = "";
+                return true;
+            }
+        //Checks if file not chosen
+        } else {
+            alert("No file has been chosen. Please select a file.");
+            return false;
+        }
+    } 
+
+    //Checks if folder selected
+    function checkFolder(){
+        var fileVal = document.forms['FolderForm']["folder"].value;
+        //Checks if file selected
+        if(fileVal != ""){
+            document.getElementById('OpenDiv').style.display = "";
+            return true;
+        } else {
+            alert("No folder has been chosen. Please select a folder.");
+            return false;
+        }
+    } 
+
+    //Checks if conversion folder selected
+    function checkConvertFolder(){
+        var fileVal = document.forms['ConvertTfPtForm']["folder"].value;
+        //Checks if file selected
+        if(fileVal != ""){
+            document.getElementById('ConvertTfPtDiv').style.display = "";
+            return true;
+        } else {
+            alert("No folder has been chosen. Please select a folder.");
+            return false;
+        }
+    } 
+
+</script>
+{% endblock %}

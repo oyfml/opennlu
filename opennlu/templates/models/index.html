@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<body onload="noModel()">
+<br>
+<h4>Model Selection</h4>
+<p>Select framework for training NLU.</p>
+<hr/>
+<br>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <div class="card text-center" style="width:80%">
+        <h6 class="card-header bg-secondary text-white" >RASA</h6>
+        <div class="card-body">
+          <a href="/model/rasa">
+            <img src="{{ url_for('static', filename='img/rasa.png') }}" class="img-thumbnail" alt="RASA" width="50%">
+          </a>
+          <br>
+          <br>
+          <p class="card-text">
+            <hr>
+            Rasa NLU is an open-source natural language processing tool for intent classification and entity extraction.
+            Configure rasa pipeline components for customised model fine-tuning.
+            <br><br>
+            <h6><u>Requirements:</u></h6>
+            <li>Training data file (.md/ .json)</li>
+            <li>RASA pipeline configuration file</li>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card text-center" style="width: 80%">
+        <h6 class="card-header bg-secondary text-white" >TensorFlow</h6>
+        <div class="card-body">
+          <a href="/model/tensorflow">
+            <img src="{{ tf_icon }}" class="img-thumbnail" alt="TensorFlow" width="50%">
+          </a>
+          <br>
+          <br>
+          <p class="card-text">
+            <hr>
+            TensorFlow is an end-to-end open source platform for machine learning.<br>
+            Specify hyperparameters of BERT for fine-tuning of joint intent classification and slot-filling model.
+            <br><br>
+            <h6><u>Requirements:</u></h6>
+            <li>Training data file (label/ seq.in/ seq.out)</li>
+            <li>Validation data file (label/ seq.in/ seq.out)</li>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card text-center" style="width: 80%">
+        <h6 class="card-header bg-secondary text-white" >PyTorch</h6>
+          <div class="card-body">
+            <a href="/model/pytorch">
+              <img src="{{ url_for('static', filename='img/pt.png') }}" class="img-thumbnail" alt="PyTorch" width="50%">
+            </a>
+            <br>
+            <br>
+            <p class="card-text">
+              <hr>
+              PyTorch is an open source machine learning library based on the Torch library.<br>
+              Specify hyperparameters of BERT for fine-tuning of joint intent classification and slot-filling model.
+              <br><br>
+              <h6><u>Requirements:</u></h6>
+              <li>Training data file (label/ seq.in/ seq.out)</li>
+              <li>Validation data file (label/ seq.in/ seq.out)</li>
+            </p>
+          </div>
+      </div>
+    </div>
+    
+  </div>
+  <br>
+  <hr>
+</div>
+</body>
+
+
+{% endblock %}
+
+{% block scripts %}
+
+<script type="text/javascript">
+
+    //Shows alert for no model, if redirected from evaluate page
+    function noModel() {
+        var fail = '{{ fail }}';
+        //No model is selected
+        if (fail == 'True'){
+            alert('Please load or train an NLU model before evaluation.');
+        } 
+    }
+
+</script>
+{% endblock %}

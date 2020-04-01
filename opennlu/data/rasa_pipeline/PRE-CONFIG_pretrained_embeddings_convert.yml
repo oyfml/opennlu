@@ -1,0 +1,4 @@
+pipeline:
+- name: "WhitespaceTokenizer"
+- name: "ConveRTFeaturizer"
+- name: "EmbeddingIntentClassifier"

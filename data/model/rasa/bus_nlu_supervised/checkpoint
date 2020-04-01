@@ -1,2 +1,0 @@
-model_checkpoint_path: "C:\\Users\\ongyi\\Anaconda3\\Lib\\site-packages\\OpenNLU\\opennlu\\data\\model\\rasa\\bus_nlu_supervised\\component_6_EmbeddingIntentClassifier.ckpt"
-all_model_checkpoint_paths: "C:\\Users\\ongyi\\Anaconda3\\Lib\\site-packages\\OpenNLU\\opennlu\\data\\model\\rasa\\bus_nlu_supervised\\component_6_EmbeddingIntentClassifier.ckpt"

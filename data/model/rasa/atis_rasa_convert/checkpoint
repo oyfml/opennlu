@@ -1,2 +1,0 @@
-model_checkpoint_path: "/mnt/c/users/ongyi/anaconda3/lib/site-packages/opennlu/opennlu/data/model/rasa/atis_rasa_convert/component_2_EmbeddingIntentClassifier.ckpt"
-all_model_checkpoint_paths: "/mnt/c/users/ongyi/anaconda3/lib/site-packages/opennlu/opennlu/data/model/rasa/atis_rasa_convert/component_2_EmbeddingIntentClassifier.ckpt"

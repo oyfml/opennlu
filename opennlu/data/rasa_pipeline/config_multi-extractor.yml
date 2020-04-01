@@ -1,0 +1,10 @@
+language: en
+
+pipeline:
+  - name: "SpacyNLP"
+  - name: "SpacyTokenizer"
+  - name: "SpacyFeaturizer"
+  - name: "SklearnIntentClassifier"
+  - name: "SpacyEntityExtractor"
+  - name: "CRFEntityExtractor"
+  - name: "EntitySynonymMapper"

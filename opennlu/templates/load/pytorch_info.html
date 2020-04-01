@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<br>
+<div>
+    <h5>
+        <img src="{{ pt_icon }}" class="img-thumbnail" alt="PyTorch" width="50"> <code>{{curr_model}}</code>
+        
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+    </h5> 
+    
+    By choosing this model, this model is currently selected as the active model for performance evaluation.
+</div>
+<hr/>
+<div class="container-fluid">
+    <div class="row">
+        <h6><span class="badge badge-secondary">Model Configuration</span> {{data_name}}</h6>
+        <br><br>
+        <textarea class="form-control" rows="20" cols="30" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" readonly>{{data}}</textarea>
+    </div>
+    <br>
+    <br>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

@@ -1,2 +1,0 @@
-model_checkpoint_path: "/home/maulik/Documents/Tools/opennlu/data/model/rasa/bus_nlu_convert/bus_nlu_convert/component_2_EmbeddingIntentClassifier.ckpt"
-all_model_checkpoint_paths: "/home/maulik/Documents/Tools/opennlu/data/model/rasa/bus_nlu_convert/bus_nlu_convert/component_2_EmbeddingIntentClassifier.ckpt"

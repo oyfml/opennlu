@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!--Split to train test dataset for rasa-->
+<br/>
+<form class="form-check" action="{{url_for('split')}}" method = "POST" name = "SplitForm" enctype = "multipart/form-data" >
+  <div class="row">
+    <div class="col-sm-5">
+      <label for="title" class="col-sm-5 control-label"><strong>Training Filename:</strong></label>
+    </div> 
+    <div class="col-sm-5">
+      <label for="type" class="col-sm-5 control-label"><strong>Test Filename:</strong></label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <input class="form-control " name="train_title" type="text" value="{{trainname}}">
+    </div>
+    <div class="col-sm-1">
+        <input class="form-control " name="train_title_type" type="text" value=".md" disabled>
+    </div>
+    <div class="col-sm-4">
+        <input class="form-control " name="test_title" type="text" value="{{testname}}">
+    </div>
+    <div class="col-sm-1">
+        <input class="form-control " name="test_title_type" type="text" value=".md" disabled>
+    </div>
+  </div>
+  <br><br>
+  <div class="row">
+    <div class="col-sm-5">
+      <label for="train_content" class="col-sm-5 control-label"><strong>Content:</strong></label>
+    </div>
+    <div class="col-sm-5">
+        <label for="test_content" class="col-sm-5 control-label"><strong>Content:</strong></label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-5">
+        <textarea class="form-control" name="train_content" style="height: 550px;" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">{{train_content}}</textarea>
+    </div>
+    <div class="col-sm-5">
+        <textarea class="form-control" name="test_content" style="height: 550px;" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">{{test_content}}</textarea>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <input class = "btn btn-primary" type = "submit" value = "Split" name = "split" style="margin-left: 15px"/>
+    <a class="btn btn-default" href="/edit">Cancel</a>
+  </div>
+</form>
+
+{% endblock %}
+
+{% block script %}
+{% endblock %}

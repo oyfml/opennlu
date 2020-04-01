@@ -1,1 +1,0 @@
-{"dtype": "<U27", "py/object": "numpy.ndarray", "values": ["alert", "bus-arrival-time(@bus-stop)", "bus-fare-inquiry", "bus-reachability-inquiry", "bus-route-inquiry", "current-location", "end-route-inquiry", "general-navigation", "onboard-travel-duration", "transfer-inquiry"]}

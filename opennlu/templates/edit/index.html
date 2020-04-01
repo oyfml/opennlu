@@ -1,0 +1,286 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!--Index for rasa-->
+<br>
+<div class="row">
+    <div class="col-sm-9">
+        <h4>Training Data </h4>
+        Create and Manage RASA NLU training examples in Markdown or JSON
+        <a href="https://rasa.com/docs/rasa/nlu/training-data-format/">format</a>
+        (e.g. Intent and Entity).
+    </div>
+    <div class="col-sm-3">
+        <ul class="pagination">
+            <li class="page-item" style="align-content:center"><a class="page-link" href="/edit/tf-pt">
+                Switch to Tensorflow/PyTorch
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg>
+            </a></li>
+        </ul> 
+    </div> 
+</div>
+<hr/>
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="card" style="display:inline-block; width:100%" >
+                <h6 class="card-header bg-secondary text-white" >
+                    Create <span class="badge badge-primary" style="font-size: 16px">New</span></h6>
+                <div class="card-body">
+                    <div class="alert alert-info alert-dismissible">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>INFO:</strong> Create new data.
+                    </div>
+                    <form method = "POST" name = "Form" enctype = "multipart/form-data" onsubmit="return checkForm()">
+                        <input  type = "text" name = "new_name" placeholder =" Enter new filename" style="margin-right: 15px"/>
+                        <input class = "btn-sm btn-primary" type = "submit" value = "Create" name = "create"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card" style="display:inline-block; width:100%">
+                <h6 class="card-header bg-secondary text-white" >
+                    Update
+                    <span class="badge badge-dark" style="font-size: 16px">Existing</span>
+                </h6>
+                <div class="card-body">
+                    <div class="alert alert-info alert-dismissible">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>INFO:</strong> Select existing dataset to edit.
+                    </div>
+                    <form method = "POST" name = "FileForm" enctype = "multipart/form-data" onsubmit="return checkFile(this.form)">
+                        <input type = "file" name = "file"  style="margin-right: 15px"/>
+                        <input class = "btn-sm btn-secondary" type = "submit" value = "Open" name = "open"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card" style="display:inline-block; width:110%">
+                <h6 class="card-header bg-secondary text-white" >
+                    Convert
+                    <span class="badge badge-dark" style="font-size: 16px">Existing </span>
+                    Format 
+                    <div class="btn-group btn-group-sm" style="margin-left: 15px;">
+                        <button type="button" class="btn btn-light" disabled>md</button>
+                        <button type="button" class="btn btn-light" disabled>json</button>
+                    </div>
+                </h6>
+                <div class="card-body">
+                    <div class="alert alert-info alert-dismissible">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>INFO:</strong> Converts file format between md & json. Conversion depends on input file format.
+                    </div>
+                    <form method = "POST" name = "ConvertForm" enctype = "multipart/form-data" onsubmit="return checkConvert(this.form)">
+                        <input type = "file" name = "convert_file"  style="margin-right: 15px"/>
+                        <input class = "btn-sm btn-primary" type = "submit" value = "Convert" name = "convert"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<hr>
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6">
+            <h4>Merge Data</h4>
+            <div>
+                Combine existing NLU training datasets into a new file.
+            </div>
+            <hr width="90%" align="left">
+            <br>
+            <div class="card" style="display:inline-block; width:90%">
+                <h6 class="card-header bg-secondary text-white" >
+                    Merge
+                    <span class="badge badge-dark" style="font-size: 16px">Existing</span>
+                </h6>
+                <div class="card-body" >
+                    <div class="alert alert-info alert-dismissible">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>INFO:</strong> Input two training files of either format (md/json) to merge into a single md file.
+                    </div>
+                    <form method = "POST" name = "MergeForm" enctype = "multipart/form-data" onsubmit="return checkMerge(this.form)">
+                        <input type = "file" name = "merge_file_1"  style="margin-right: 15px"/><br><br>
+                        <input type = "file" name = "merge_file_2"  style="margin-right: 15px"/><br><br>                        
+                        <input  type = "text" name = "merge_name" placeholder =" Enter new filename" style="margin-right: 15px"/>
+                        <div class="loader" id="CombineDiv" style="display:none"></div>
+                        <input class = "btn-sm btn-primary" type = "submit" value = "Combine" name = "merge" id = "combine"/>
+                        <span data-toggle="tooltip" title="Saves resulting file in .md format. For .json format, please use convert feature.">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity" ><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="8"></line></svg>
+                        </span>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <h4>Train-Test Split</h4>
+            <div>
+                Split dataset into separate files for training and testing. 
+            </div>
+            <hr width="90%" align="left">
+            <br>
+            <div class="card" style="display:inline-block; width:90%">
+                <h6 class="card-header bg-secondary text-white" >
+                    Split
+                    <span class="badge badge-dark" style="font-size: 16px">Existing</span>
+                </h6>
+                <div class="card-body">
+                    <div class="alert alert-info alert-dismissible">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>INFO:</strong> Select dataset to be split into training and test files. Drag and adjust slider to specify desired train-test split ratio.
+                    </div>
+                    <form method = "POST" name = "TTSForm" enctype = "multipart/form-data" onsubmit="return checkTTSFile(this.form)">
+                        
+                        <input type = "file" name = "train_test_split" /><br><br>
+                        <div class="col">
+                        <span class="slidecontainer" style="margin-right: 15px">
+                            <span class="badge badge-secondary" style="font-size: 16px">Train</span>
+                            <span class="badge badge-pill badge-secondary" style="font-size: 16px">
+                                <input type="range" name="rangeSlider" min="0" max="100" value="70" step="5" onchange="updateTextInput(this.value);">
+                            </span>
+                            <span class="badge badge-secondary" style="font-size: 16px; margin-right: 15px">Test</span>
+                            <input type="text" id="rangeInput" value="70% - 30%" style="width: 18%; text-align: center;" disabled>
+                        </span>
+                        <div class="loader" id="SplitDiv" style="display:none"></div>
+                        <input class = "btn-sm btn-primary" type = "submit" value = "Split" name = "split" id = "split"/>                      
+                        <span data-toggle="tooltip" title="Saves resulting files in .md format. For .json format, please use convert feature.">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity" ><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="8"></line></svg>
+                        </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+ 
+</div>
+
+
+{% endblock %}
+
+{% block scripts %}
+
+<script type="text/javascript">
+    //Checks for empty fields in text box
+    function checkForm() {
+        //Check if filename is entered
+        var a = document.forms["Form"]["new_name"].value;
+        if (a == null || a == "") {
+            alert("Please fill in filename");
+            return false;
+        }
+    }
+
+    //Checks for existing file with correct file type
+    function checkFile(FileForm){
+        var fileVal = document.forms["FileForm"]["file"].value;
+        //RegEx for valid file name and extensions.
+        var pathExpression = "[?:[a-zA-Z0-9-_\.]+(?:.md|.json)";
+        //Checks for wrong file type
+        if(fileVal != ""){
+            if(!fileVal.toString().match(pathExpression)){
+                alert("Invalid file type. Please select .md / .json file type.");
+                return false;
+            }else{
+                return true;
+            }
+        //Checks if file not chosen
+        } else {
+            alert("No file has been chosen. Please select a file.");
+            return false;
+        }
+    }   
+
+    //Checks for existing file with correct file type
+    function checkConvert(FileForm){
+        var fileVal = document.forms["ConvertForm"]["convert_file"].value;
+        //RegEx for valid file name and extensions.
+        var pathExpression = "[?:[a-zA-Z0-9-_\.]+(?:.md|.json)";
+        //Checks for wrong file type
+        if(fileVal != ""){
+            if(!fileVal.toString().match(pathExpression)){
+                alert("Invalid file type. Please select .md / .json file type.");
+                return false;
+            }else{
+                return true;
+            }
+        //Checks if file not chosen
+        } else {
+            alert("No file has been chosen. Please select a file.");
+            return false;
+        }
+    } 
+
+    //Checks for empty fields in text box
+    function checkMerge(FileForm) {
+        //Check if filename is entered
+        var a = document.forms["MergeForm"]["merge_name"].value;
+        if (a == null || a == "") {
+            alert("Please fill in filename");
+            return false;
+        }
+        var fileVal_1 = document.forms["MergeForm"]["merge_file_1"].value;
+        var fileVal_2 = document.forms["MergeForm"]["merge_file_2"].value;
+        //RegEx for valid file name and extensions.
+        var pathExpression = "[?:[a-zA-Z0-9-_\.]+(?:.md|.json)";
+        //Checks for wrong file type
+        if((fileVal_1 != "")&&(fileVal_2 != "")){
+            if(!fileVal_1.toString().match(pathExpression)){
+                alert("Invalid file type for the first file. Please select .md / .json file type.");
+                return false;
+            }else if(!fileVal_2.toString().match(pathExpression)){
+                alert("Invalid file type for the second file. Please select .md / .json file type.");
+                return false;
+            }else{
+                document.getElementById('CombineDiv').style.display = "";
+                return true;
+            }
+        //Checks if file not chosen
+        } else {
+            if((fileVal_1 == "")&&(fileVal_2 == "")){
+                alert("No file has been chosen. Please select two files.");
+                return false;
+            }else if(fileVal_1 == ""){
+                alert("First file has not been chosen. Please select file.");
+                return false;
+            }else{
+                alert("Second file has not been chosen. Please select file.");
+                return false;
+            }
+        }
+    }
+    //Checks for empty fields in text box
+    function checkTTSFile(FileForm) {
+        var fileVal = document.forms["TTSForm"]["train_test_split"].value;
+        //RegEx for valid file name and extensions.
+        var pathExpression = "[?:[a-zA-Z0-9-_\.]+(?:.md|.json)";
+        //Checks for wrong file type
+        if(fileVal != ""){
+            if(!fileVal.toString().match(pathExpression)){
+                alert("Invalid file type. Please select .md / .json file type.");
+                return false;
+            }else{
+                document.getElementById('SplitDiv').style.display = "";
+                return true;
+            }
+        //Checks if file not chosen
+        } else {
+            alert("No file has been chosen. Please select a file.");
+            return false;
+        }
+    }
+
+
+    //Updates range value based on range slider
+    function updateTextInput(val) {
+        value = val + "% - " + (100-val) + "%"
+        document.getElementById('rangeInput').value=value; 
+    }
+</script>
+{% endblock %}

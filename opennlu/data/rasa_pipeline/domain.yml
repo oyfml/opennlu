@@ -1,0 +1,28 @@
+intents:
+  - self_introduction
+  - greet
+  - goodbye
+  - station-name
+  - thanks
+
+entities:
+ - name
+
+templates:
+  utter_self_intro:
+    - text: "I am bus information agent"
+  utter_greet:
+    - text: "hey there!"
+  utter_goodbye:
+    - text: "goodbye"
+  utter_station-name:
+    - text: "act_get_station_name"
+  utter_thanks:
+    - text: "you are welcome"
+
+actions:
+  - utter_self_intro
+  - utter_greet
+  - utter_goodbye
+  - utter_station-name
+  - utter_thanks
