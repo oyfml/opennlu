@@ -4,6 +4,12 @@ OpenNLU is a front-end interface for Natural Language Understanding (NLU) develo
 
 ![home](readme_images/home.JPG "home")
 
+## Run
+
+```bash
+$ python3 run.py
+```
+
 ## Features
 
 - Data Management
@@ -46,11 +52,6 @@ OpenNLU is a front-end interface for Natural Language Understanding (NLU) develo
 - Predict
   - Return metrics and prediction for single sentence
 
-## Run
-
-```bash
-$ python3 run.py
-```
 
 ### Credits for Tensorflow, PyTorch backend implementation
 
