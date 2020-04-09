@@ -52,7 +52,7 @@ OpenNLU is a front-end interface for Natural Language Understanding (NLU) develo
 $ python3 run.py
 ```
 
-## Credits for Tensorflow, PyTorch backend implementation
+### Credits for Tensorflow, PyTorch backend implementation
 
 - [dialog-nlu](https://github.com/MahmoudWahdan/dialog-nlu)
 - [JointBERT](https://github.com/monologg/JointBERT)
